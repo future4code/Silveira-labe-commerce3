@@ -5,23 +5,22 @@ import img3 from "./components/img/camisa3.jpg";
 import img4 from "./components/img/camisa4.jpg";
 import styled from "styled-components";
 import Card from "./components/card";
-import Filters from "./components/filtros"
+import Filters from "./components/filtros";
 
 const Body = styled.div`
   display: flex;
   gap: 2px;
-` 
+`;
 
-const CartDiv = styled.div `
+const CartDiv = styled.div`
   width: 33vw;
   border: solid black 2px;
-`
+`;
 
-const Products = styled.div `
+const Products = styled.div`
   width: 34vw;
   border: solid black 2px;
-
-` 
+`;
 
 class App extends React.Component {
   state = {
@@ -57,6 +56,7 @@ class App extends React.Component {
     inputValue: "",
     maxValue: 10000,
     minValue: 1,
+    sortingOrder: "crescente",
   };
 
   filtraNomeDaCamiseta = (event) => {
@@ -77,23 +77,52 @@ class App extends React.Component {
     });
   };
 
+  updateSortingOrder = (event) => {
+    this.setState({
+      sortingOrder: event.target.value,
+    });
+  };
+
   render() {
-    const filteredProducts = this.state.products.filter ((product) => {
+    
+    //Aqui a gente pega os produtos do State e filtra de acordo com os filtros definidos (inputValue, maxValue, minValue)
+    const filteredProducts = this.state.products.filter((product) => {
       return (
-      product.name.includes(this.state.inputValue) &&
-      product.value >= this.state.minValue &&
-      product.value <= this.state.maxValue
-
-      ) 
-    }) 
-
-    let listProducts = filteredProducts.map((product) => {
-      return (
-       <Card
-          cardProduct = {product}
-       />
+        product.name.includes(this.state.inputValue) &&
+        product.value >= this.state.minValue &&
+        product.value <= this.state.maxValue
       );
     });
+    
+    // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
+    filteredProducts.sort((currentValue, nextValue) => {
+      if (this.state.sortingOrder === "crescente") {
+        if (currentValue.value > nextValue.value) {
+          return 1;
+        }
+        if (currentValue.value < nextValue.value) {
+          return -1;
+        }
+      }
+
+      if (this.state.sortingOrder === "descrescente") {
+        if (currentValue.value > nextValue.value) {
+          return -1;
+        }
+        if (currentValue.value < nextValue.value) {
+          return 1;
+        }
+      }
+      return 0;
+    });
+
+    //Aqui a gente pega a lista filtrada/ordenada e cria uma variável igual a ela para mapear produto por produto e renderizar no JSX
+    let listProducts = filteredProducts.map((product) => {
+      return <Card cardProduct={product} />;
+    });
+
+    //Aqui a gente pega a lista de produtos filtrada e extrai o tamanho dela para renderizar o totalProducts na tela de acordo com o que foi filtrado.
+    let totalProducts = filteredProducts.length;
 
     return (
       <Body>
@@ -105,16 +134,27 @@ class App extends React.Component {
           minValue={this.state.minValue}
           filtraPorValorMinimo={this.filtraPorValorMinimo}
         />
-        
 
         <Products>
+          <div>
+            <label for="sort">Ordenação por preço: </label>
+            <select
+              name="sort"
+              value={this.state.sortingOrder}
+              onChange={this.updateSortingOrder}
+            >
+              <option value="crescente">Crescente</option>
+
+              <option value="descrescente">Descrescente</option>
+            </select>
+          </div>
+          <div>
+            <p>Quantidade de produtos: {totalProducts}</p>
+          </div>
           {listProducts}
         </Products>
 
-        <CartDiv>
-          carrinho
-        </CartDiv>
-
+        <CartDiv>carrinho</CartDiv>
       </Body>
     );
   }
