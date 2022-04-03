@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "imagem": "https://images.tcdn.com.br/img/img_prod/669029/camiseta_abducao_vaca_alien_et_ufo_ovni_alienigena_3347_1_c7cbb74ff422fed18c1c958cc77dc245.jpg",
+        "NomeProduto": "Camiseta 1",
+        "preco": 30,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 2,
+        "imagem": "https://cf.shopee.com.br/file/7a044ec1e81f1102d5488cc291b95f6a",
+        "NomeProduto": "Camiseta 2",
+        "preco": 50,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 3,
+        "imagem": "https://dkdkf5wiwtstx.cloudfront.net/Custom/Content/Products/10/83/1083861_camiseta-mc-nasa-100171165_m3_637668712828303274.jpg",
+        "NomeProduto": "Camiseta 3",
+        "preco": 105,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 4,
+        "imagem": "https://images-americanas.b2w.io/produtos/01/00/img/41515/9/41515933_1GG.jpg",
+        "NomeProduto": "Camiseta 4",
+        "preco": 65,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 5,
+        "imagem": "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_feminina_unissex_gato_astronauta_nasa_espaco_preta_ev_77287_1_c184df988abc2a7cb1608805915c95e8.jpg",
+        "NomeProduto": "Camiseta 5",
+        "preco": 100,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 6,
+        "imagem": "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_masculina_unissex_astronauta_no_espaco_bandeira_space_nasa_preta_ev_82811_1_998311e5d2a0292bd43cde97c520f024.jpg",
+        "NomeProduto": "Camiseta 6",
+        "preco": 80,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 7,
+        "imagem": "https://img.elo7.com.br/product/zoom/3244DBA/camiseta-camisa-personalizada-astronauta-universo-espaco-hd6-espaco.jpg",
+        "NomeProduto": "Camiseta 7",
+        "preco": 75,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 8,
+        "imagem": "https://images-submarino.b2w.io/produtos/4616722618/imagens/camiseta-masculina-cinza-estampada-gato-astronauta-espaco-g/4616722634_1_large.jpg",
+        "NomeProduto": "Camiseta 8",
+        "preco": 99,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 9,
+        "imagem": "https://images-americanas.b2w.io/produtos/4617807875/imagens/camiseta-masculina-raglan-cinza-estampada-astronauta-do-espaco-lendo-livro-nerd-g/4617807971_1_large.jpg",
+        "NomeProduto": "Camiseta 9",
+        "preco": 105,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 10,
+        "imagem": "https://images.tcdn.com.br/img/img_prod/669029/camiseta_astronauta_navegando_na_galaxia_3361_1_d762f780971ca4905a896bf4c550cb05.jpg",
+        "NomeProduto": "Camiseta 10",
+        "preco": 45,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 11,
+        "imagem": "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_unissex_astronauta_jogando_no_espaco_preto_72894_1_961493f69690d368676ee73538f44a06.jpg",
+        "NomeProduto": "Camiseta 11",
+        "preco": 60,
+        "cart": false,
+        "quantidade": 0
+      },
+
+      {
+        "id": 12,
+        "imagem": "https://http2.mlstatic.com/D_NQ_NP_829433-MLB31678321621_082019-O.jpg",
+        "NomeProduto": "Camiseta 12",
+        "preco": 105,
+        "cart": false,
+        "quantidade": 0
+      }
+
+]

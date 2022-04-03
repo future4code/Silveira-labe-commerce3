@@ -1,29 +1,39 @@
 import React from "react";
-import img1 from "./components/img/camisa1.jpg";
-import img2 from "./components/img/camisa2.jpg";
-import img3 from "./components/img/camisa3.jpg";
-import img4 from "./components/img/camisa4.jpg";
+import img from "./components/img/camisa4.jpg";
 import styled from "styled-components";
 import Card from "./components/card";
 import Filters from "./components/filtros";
 
+import "./styles.css";
+
 const Body = styled.div`
-  display: flex;
-  gap: 2px;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 15% 6fr 15%;
+  column-gap: 0px;
+  text-align: center;
+  padding: 0px;
+  border: none;
+  overflow-x: auto;
+  color: whitesmoke;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   `
 
-const CartDiv = styled.div`
-  width: 33vw;
-  border: solid black 2px;
-
-const Products = styled.div`
-  width: 34vw;
-  border: solid black 2px;
+const ComponentDiv = styled.div`
+  border: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 `
 
 const ItemContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: 15% 0.5fr 40%;
   gap: 4px;
   align-items: center;
 
@@ -31,62 +41,132 @@ const ItemContainer = styled.div`
     margin: 0;
   }
 `
-=======
+const ProdutosContainer = styled.div`
+    background-color: whitesmoke;
+    color: black;
+    padding-bottom: 100%;
 `;
+
+const ProdutosHeader = styled.div`
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: #cee3f6;
+  font-weight: bold;
+  border-radius: 20px;
+
+`
+
+.listaDeProdutos = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: pink;
+`
 
 class App extends React.Component {
   state = {
     products: [
       {
         id: 1,
+        imageUrl: "https://images.tcdn.com.br/img/img_prod/669029/camiseta_abducao_vaca_alien_et_ufo_ovni_alienigena_3347_1_c7cbb74ff422fed18c1c958cc77dc245.jpg",
         name: "Camiseta 1",
         value: 30,
-        imageUrl: img1,
       },
 
       {
         id: 2,
+        imageUrl: "https://cf.shopee.com.br/file/7a044ec1e81f1102d5488cc291b95f6a",
         name: "Camiseta 2",
         value: 50,
-        imageUrl: img2,
       },
 
       {
         id: 3,
+        imageUrl: "https://dkdkf5wiwtstx.cloudfront.net/Custom/Content/Products/10/83/1083861_camiseta-mc-nasa-100171165_m3_637668712828303274.jpg",
         name: "Camiseta 3",
-        value: 100,
-        imageUrl: img3,
+        value: 105,
       },
 
       {
         id: 4,
+        imageUrl: "https://images-americanas.b2w.io/produtos/01/00/img/41515/9/41515933_1GG.jpg",
         name: "Camiseta 4",
-        value: 200,
-        imageUrl: img4,
+        value: 65,
       },
+
+      {
+        id: 5,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_feminina_unissex_gato_astronauta_nasa_espaco_preta_ev_77287_1_c184df988abc2a7cb1608805915c95e8.jpg",
+        name: "Camiseta 5",
+        value: 100,
+      },
+
+      {
+        id: 6,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_masculina_unissex_astronauta_no_espaco_bandeira_space_nasa_preta_ev_82811_1_998311e5d2a0292bd43cde97c520f024.jpg",
+        name: "Camiseta 6",
+        value: 80,
+      },
+
+      {
+        id: 7,
+        imageUrl: "https://img.elo7.com.br/product/zoom/3244DBA/camiseta-camisa-personalizada-astronauta-universo-espaco-hd6-espaco.jpg",
+        name: "Camiseta 7",
+        value: 75,
+      },
+
+      {
+        id: 8,
+        imageUrl: "https://images-submarino.b2w.io/produtos/4616722618/imagens/camiseta-masculina-cinza-estampada-gato-astronauta-espaco-g/4616722634_1_large.jpg",
+        name: "Camiseta 8",
+        value: 99,
+      },
+
+      {
+        id: 9,
+        imageUrl: "https://images-americanas.b2w.io/produtos/4617807875/imagens/camiseta-masculina-raglan-cinza-estampada-astronauta-do-espaco-lendo-livro-nerd-g/4617807971_1_large.jpg",
+        name: "Camiseta 9",
+        value: 105,
+      },
+
+      {
+        id: 10,
+        imageUrl: "https://images.tcdn.com.br/img/img_prod/669029/camiseta_astronauta_navegando_na_galaxia_3361_1_d762f780971ca4905a896bf4c550cb05.jpg",
+        name: "Camiseta 10",
+        value: 45,
+      },
+
+      {
+        id: 11,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_unissex_astronauta_jogando_no_espaco_preto_72894_1_961493f69690d368676ee73538f44a06.jpg",
+        name: "Camiseta 11",
+        value: 60,
+      },
+
+      {
+        id: 12,
+        imageUrl: "https://http2.mlstatic.com/D_NQ_NP_829433-MLB31678321621_082019-O.jpg",
+        name: "Camiseta 12",
+        value: 105,
+      },
+
     ],
-    inputValue: "Camiseta",
-    maxValue: 10000,
-    minValue: 1,
+    
+    id: "input1", inputValue: "Camiseta",
+    id: "input2", maxValue: 10000,
+    id: "input1", minValue: 1,
 
     storeCart: [
       {
         id: 4,
         name: "Camiseta 4",
-        value: 200,
-        imageUrl: img4,
+        value: 65,
+        imageUrl: img,
         quantity: 3
-      }, {
-        id: 5,
-        name: "Camiseta 4",
-        value: 200,
-        imageUrl: img4,
-        quantity: 4
-      }
+      },
     ]
-=======
-    sortingOrder: "crescente",
-
   };
 
   filtraNomeDaCamiseta = (event) => {
@@ -112,6 +192,16 @@ class App extends React.Component {
       sortingOrder: event.target.value,
     });
   };
+
+  clearFilters = () => {
+    this.setState({
+      minValue: "",
+      maxValue: "",
+      inputValue: "",
+      sortingOrder: "",
+    })
+  }
+  
 
   addToCart = (idProduct) => {
     const productCart = this.state.storeCart.find(product => idProduct === product.id)
@@ -152,10 +242,12 @@ class App extends React.Component {
   totalValueCart = () => {
     let totalValue = 0
     for (let product of this.state.storeCart) {
-        totalValue += product.value * product.quantity
+      totalValue += product.value * product.quantity
     }
     return totalValue
-}
+  }
+
+  
 
   render() {
 
@@ -171,45 +263,6 @@ class App extends React.Component {
       );
     });
 
-     //Aqui a gente pega os produtos do State e filtra de acordo com os filtros definidos (inputValue, maxValue, minValue)
-     const filteredProducts = this.state.products.filter((product) => {
-      return (
-        product.name.includes(this.state.inputValue) &&
-        product.value >= this.state.minValue &&
-        product.value <= this.state.maxValue
-      );
-    });
-
-     // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
-     filteredProducts.sort((currentValue, nextValue) => {
-      if (this.state.sortingOrder === "crescente") {
-        if (currentValue.value > nextValue.value) {
-          return 1;
-        }
-        if (currentValue.value < nextValue.value) {
-          return -1;
-        }
-      }
-
-      if (this.state.sortingOrder === "descrescente") {
-        if (currentValue.value > nextValue.value) {
-          return -1;
-        }
-        if (currentValue.value < nextValue.value) {
-          return 1;
-        }
-      }
-      return 0;
-    });
-
-     //Aqui a gente pega a lista filtrada/ordenada e cria uma variável igual a ela para mapear produto por produto e renderizar no JSX
-     let listProducts = filteredProducts.map((product) => {
-      return <Card cardProduct={product} />;
-    });
-
-=======
-  render() {
-    
     //Aqui a gente pega os produtos do State e filtra de acordo com os filtros definidos (inputValue, maxValue, minValue)
     const filteredProducts = this.state.products.filter((product) => {
       return (
@@ -218,7 +271,7 @@ class App extends React.Component {
         product.value <= this.state.maxValue
       );
     });
-    
+
     // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
     filteredProducts.sort((currentValue, nextValue) => {
       if (this.state.sortingOrder === "crescente") {
@@ -246,12 +299,37 @@ class App extends React.Component {
       return <Card cardProduct={product} />;
     });
 
+    // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
+    filteredProducts.sort((currentValue, nextValue) => {
+      if (this.state.sortingOrder === "crescente") {
+        if (currentValue.value > nextValue.value) {
+          return 1;
+        }
+        if (currentValue.value < nextValue.value) {
+          return -1;
+        }
+      }
+
+      if (this.state.sortingOrder === "descrescente") {
+        if (currentValue.value > nextValue.value) {
+          return -1;
+        }
+        if (currentValue.value < nextValue.value) {
+          return 1;
+        }
+      }
+      return 0;
+    });
+
     //Aqui a gente pega a lista de produtos filtrada e extrai o tamanho dela para renderizar o totalProducts na tela de acordo com o que foi filtrado.
     let totalProducts = filteredProducts.length;
 
     return (
+      
       <Body>
-        <Filters
+
+        <ComponentDiv>
+        <Filters 
           inputValue={this.state.inputValue}
           filtraNomeDaCamiseta={this.filtraNomeDaCamiseta}
           maxValue={this.state.maxValue}
@@ -259,13 +337,12 @@ class App extends React.Component {
           minValue={this.state.minValue}
           filtraPorValorMinimo={this.filtraPorValorMinimo}
         />
+        </ComponentDiv>
 
-        <Products>
-            
-        <div>
-=======
+        <ComponentDiv>
+        <ProdutosContainer>
+          <ProdutosHeader>
           <div>
-
             <label for="sort">Ordenação por preço: </label>
             <select
               name="sort"
@@ -277,22 +354,26 @@ class App extends React.Component {
               <option value="descrescente">Descrescente</option>
             </select>
           </div>
+
           <div>
             <p>Quantidade de produtos: {totalProducts}</p>
           </div>
-          {listProducts}
-        </Products>
 
-        <div>
-        <h3>Carrinho:</h3>
+          <div className="listaDeProdutos">
+          {listProducts}
+          <button addToCart={this.props.addToCart} />
+          </div>
+          </ProdutosHeader>
+        </ProdutosContainer>
+        </ComponentDiv>
+
+        <ComponentDiv>
+          <h3>Carrinho:</h3>
           {cartList}
           <p>Valor total: R${this.totalValueCart()},00</p>
-        </div>
-
-=======
-        <CartDiv>carrinho</CartDiv>
-
+          </ComponentDiv>
       </Body>
+
     );
   }
 }
