@@ -1,0 +1,83 @@
+{
+        id: 1,
+        name: "Camiseta 1",
+        value: 30,
+        imageUrl: "https://images.tcdn.com.br/img/img_prod/669029/camiseta_abducao_vaca_alien_et_ufo_ovni_alienigena_3347_1_c7cbb74ff422fed18c1c958cc77dc245.jpg",
+      },
+
+      {
+        id: 2,
+        name: "Camiseta 2",
+        value: 50,
+        imageUrl: "https://cf.shopee.com.br/file/7a044ec1e81f1102d5488cc291b95f6a",
+      },
+
+      {
+        id: 3,
+        name: "Camiseta 3",
+        value: 100,
+        imageUrl: "https://dkdkf5wiwtstx.cloudfront.net/Custom/Content/Products/10/83/1083861_camiseta-mc-nasa-100171165_m3_637668712828303274.jpg",
+      },
+
+      {
+        id: 4,
+        name: "Camiseta 4",
+        value: 200,
+        imageUrl: "https://images-americanas.b2w.io/produtos/01/00/img/41515/9/41515933_1GG.jpg",
+      },
+
+      {
+        id: 5,
+        name: "Camiseta 5",
+        value: 100,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_feminina_unissex_gato_astronauta_nasa_espaco_preta_ev_77287_1_c184df988abc2a7cb1608805915c95e8.jpg",
+      },
+
+      {
+        id: 6,
+        name: "Camiseta 6",
+        value: 80,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_masculina_unissex_astronauta_no_espaco_bandeira_space_nasa_preta_ev_82811_1_998311e5d2a0292bd43cde97c520f024.jpg",
+      },
+
+      {
+        id: 7,
+        name: "Camiseta 7",
+        value: 100,
+        imageUrl: "https://img.elo7.com.br/product/zoom/3244DBA/camiseta-camisa-personalizada-astronauta-universo-espaco-hd6-espaco.jpg",
+      },
+
+      {
+        id: 8,
+        name: "Camiseta 8",
+        value: 100,
+        imageUrl: "https://images-submarino.b2w.io/produtos/4616722618/imagens/camiseta-masculina-cinza-estampada-gato-astronauta-espaco-g/4616722634_1_large.jpg",
+      },
+
+      {
+        id: 9,
+        name: "Camiseta 9",
+        value: 100,
+        imageUrl: "https://images-americanas.b2w.io/produtos/4617807875/imagens/camiseta-masculina-raglan-cinza-estampada-astronauta-do-espaco-lendo-livro-nerd-g/4617807971_1_large.jpg",
+      },
+
+      {
+        id: 10,
+        name: "Camiseta 10",
+        value: 100,
+        imageUrl: "https://images.tcdn.com.br/img/img_prod/669029/camiseta_astronauta_navegando_na_galaxia_3361_1_d762f780971ca4905a896bf4c550cb05.jpg",
+      },
+
+      {
+        id: 11,
+        name: "Camiseta 11",
+        value: 100,
+        imageUrl: "https://static3.tcdn.com.br/img/img_prod/460977/camiseta_unissex_astronauta_jogando_no_espaco_preto_72894_1_961493f69690d368676ee73538f44a06.jpg",
+      },
+
+      {
+        id: 12,
+        name: "Camiseta 12",
+        value: 100,
+        imageUrl: "https://http2.mlstatic.com/D_NQ_NP_829433-MLB31678321621_082019-O.jpg",
+      },

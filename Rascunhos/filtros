@@ -1,0 +1,84 @@
+import React, { Component } from "react";
+import styled from "styled-components";
+
+const Inputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  width: 15vw;
+  border: none;
+  padding-bottom: 100vh;
+`;
+
+const SecaoTitulo = styled.h2`
+    word-wrap: break-word;
+    max-width: 100%;
+`
+
+const NumberInput = styled.input`
+    box-sizing: border-box;
+    width: 80px;
+    max-width: 90%;
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding: 0;
+`
+
+const FreeTextInput = styled.input`
+    box-sizing: border-box;
+    text-align: center;
+    width: 160px;
+    max-width: 95%;    
+    margin-top: 0;
+    padding: 0;
+`
+
+const InputTitulo = styled.p`
+    word-wrap: break-word;
+    max-width: 100%;
+    margin: 4px;
+`
+
+class Filters extends React.Component {
+  state = {};
+  render() {
+    return (
+      <Inputs>
+        <SecaoTitulo>Filtros</SecaoTitulo>
+
+        <InputTitulo>Busque pelo nome</InputTitulo>
+
+        <FreeTextInput placeholder="Nome do produto"
+          value={this.props.inputValue}
+          onChange={this.props.filtraNomeDaCamiseta}
+        />
+
+        <InputTitulo>Valor Mínimo</InputTitulo>
+
+        <NumberInput
+          value={this.props.minValue}
+          onChange={this.props.filtraPorValorMinimo}
+          min="0"
+          type="number"
+          placeholder="Mínimo"
+        />
+
+        <InputTitulo>Valor Máximo</InputTitulo>
+
+        <NumberInput
+          value={this.props.maxValue}
+          onChange={this.props.filtraPorValorMaximo}
+          max="0"
+          type="number"
+          placeholder="Máximo"
+        />
+
+      <br></br>
+        <button onClick={this.props.clearFilters}>Limpar Filtros</button>
+
+      </Inputs>
+    );
+  }
+}
+
+export default Filters;
