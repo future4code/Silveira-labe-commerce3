@@ -10,16 +10,17 @@ import Filters from "./components/filtros";
 const Body = styled.div`
   display: flex;
   gap: 2px;
-  `
+`;
 
 const CartDiv = styled.div`
   width: 33vw;
   border: solid black 2px;
+`;
 
 const Products = styled.div`
   width: 34vw;
   border: solid black 2px;
-`
+`;
 
 const ItemContainer = styled.div`
   display: grid;
@@ -30,8 +31,6 @@ const ItemContainer = styled.div`
   p {
     margin: 0;
   }
-`
-=======
 `;
 
 class App extends React.Component {
@@ -75,18 +74,17 @@ class App extends React.Component {
         name: "Camiseta 4",
         value: 200,
         imageUrl: img4,
-        quantity: 3
-      }, {
+        quantity: 3,
+      },
+      {
         id: 5,
         name: "Camiseta 4",
         value: 200,
         imageUrl: img4,
-        quantity: 4
-      }
-    ]
-=======
+        quantity: 4,
+      },
+    ],
     sortingOrder: "crescente",
-
   };
 
   filtraNomeDaCamiseta = (event) => {
@@ -114,102 +112,75 @@ class App extends React.Component {
   };
 
   addToCart = (idProduct) => {
-    const productCart = this.state.storeCart.find(product => idProduct === product.id)
+    const productCart = this.state.storeCart.find(
+      (product) => idProduct === product.id
+    );
     // Método find retorna o valor do primeiro elemento do arary que satisfaz a função, neste caso, criamos um novo array e adicionamos a ele o produto que possui o mesmo ID que foi informado.
     if (productCart) {
-      // Aqui vamos fazer a nossa primeira condicional passando o array do carrinho como parametro. 
-      const newProductCart = this.state.storeCart.map(product => {
+      // Aqui vamos fazer a nossa primeira condicional passando o array do carrinho como parametro.
+      const newProductCart = this.state.storeCart.map((product) => {
         // criando um novo array que é um mapeamento do array inicial do carrinho (definido no state) que inicialmente se encontra vazio.
         if (idProduct === product.id) {
-          return { ...product, quantity: product.quantity + 1 }
-          // Se o produto já existe dentro do carrinho, ao inves de adiciona-lo novamente, vamos apenas aumentar a sua quantidade. 
+          return { ...product, quantity: product.quantity + 1 };
+          // Se o produto já existe dentro do carrinho, ao inves de adiciona-lo novamente, vamos apenas aumentar a sua quantidade.
         }
-        return product
-      })
-      this.setState({ storeCart: newProductCart })
+        return product;
+      });
+      this.setState({ storeCart: newProductCart });
       // "settando" os novos valores na váriavel do state.
     } else {
-      const addProduct = this.state.products.find(product => idProduct === product.id)
+      const addProduct = this.state.products.find(
+        (product) => idProduct === product.id
+      );
 
-      const newProductCart = [...this.state.storeCart, { ...addProduct, quantity: 1 }]
+      const newProductCart = [
+        ...this.state.storeCart,
+        { ...addProduct, quantity: 1 },
+      ];
 
-      this.setState({ storeCart: newProductCart })
+      this.setState({ storeCart: newProductCart });
     }
-  }
+  };
 
   removeToCart = (idProduct) => {
-    const newProductCart = this.state.storeCart.map((product) => {
-      if (product.id === idProduct) {
-        return {
-          ...product, quantity: product.quantity - 1
+    const newProductCart = this.state.storeCart
+      .map((product) => {
+        if (product.id === idProduct) {
+          return {
+            ...product,
+            quantity: product.quantity - 1,
+          };
         }
-      }
-      return product
-    }).filter((product) => product.quantity > 0)
-    this.setState({ storeCart: newProductCart })
-  }
+        return product;
+      })
+      .filter((product) => product.quantity > 0);
+    this.setState({ storeCart: newProductCart });
+  };
 
   totalValueCart = () => {
-    let totalValue = 0
+    let totalValue = 0;
     for (let product of this.state.storeCart) {
-        totalValue += product.value * product.quantity
+      totalValue += product.value * product.quantity;
     }
-    return totalValue
-}
+    return totalValue;
+  };
 
   render() {
-
     let cartList = this.state.storeCart.map((product) => {
       return (
         <div>
           <ItemContainer>
             <p>{product.quantity}X</p>
             <p>{product.name}</p>
-            <button onClick={() => this.removeToCart(product.id)}> Remover </button>
+            <button onClick={() => this.removeToCart(product.id)}>
+              {" "}
+              Remover{" "}
+            </button>
           </ItemContainer>
         </div>
       );
     });
 
-     //Aqui a gente pega os produtos do State e filtra de acordo com os filtros definidos (inputValue, maxValue, minValue)
-     const filteredProducts = this.state.products.filter((product) => {
-      return (
-        product.name.includes(this.state.inputValue) &&
-        product.value >= this.state.minValue &&
-        product.value <= this.state.maxValue
-      );
-    });
-
-     // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
-     filteredProducts.sort((currentValue, nextValue) => {
-      if (this.state.sortingOrder === "crescente") {
-        if (currentValue.value > nextValue.value) {
-          return 1;
-        }
-        if (currentValue.value < nextValue.value) {
-          return -1;
-        }
-      }
-
-      if (this.state.sortingOrder === "descrescente") {
-        if (currentValue.value > nextValue.value) {
-          return -1;
-        }
-        if (currentValue.value < nextValue.value) {
-          return 1;
-        }
-      }
-      return 0;
-    });
-
-     //Aqui a gente pega a lista filtrada/ordenada e cria uma variável igual a ela para mapear produto por produto e renderizar no JSX
-     let listProducts = filteredProducts.map((product) => {
-      return <Card cardProduct={product} />;
-    });
-
-=======
-  render() {
-    
     //Aqui a gente pega os produtos do State e filtra de acordo com os filtros definidos (inputValue, maxValue, minValue)
     const filteredProducts = this.state.products.filter((product) => {
       return (
@@ -218,7 +189,7 @@ class App extends React.Component {
         product.value <= this.state.maxValue
       );
     });
-    
+
     // Aqui a gente pega os produtos filtrados e organiza em ordem crescente e decrescente de acordo o sortingOrder
     filteredProducts.sort((currentValue, nextValue) => {
       if (this.state.sortingOrder === "crescente") {
@@ -261,37 +232,33 @@ class App extends React.Component {
         />
 
         <Products>
-            
-        <div>
-=======
           <div>
+            <div>
+              <label for="sort">Ordenação por preço: </label>
+              <select
+                name="sort"
+                value={this.state.sortingOrder}
+                onChange={this.updateSortingOrder}
+              >
+                <option value="crescente">Crescente</option>
 
-            <label for="sort">Ordenação por preço: </label>
-            <select
-              name="sort"
-              value={this.state.sortingOrder}
-              onChange={this.updateSortingOrder}
-            >
-              <option value="crescente">Crescente</option>
-
-              <option value="descrescente">Descrescente</option>
-            </select>
+                <option value="descrescente">Descrescente</option>
+              </select>
+            </div>
+            <div>
+              <p>Quantidade de produtos: {totalProducts}</p>
+            </div>
+            {listProducts}
           </div>
-          <div>
-            <p>Quantidade de produtos: {totalProducts}</p>
-          </div>
-          {listProducts}
         </Products>
 
         <div>
-        <h3>Carrinho:</h3>
+          <h3>Carrinho:</h3>
           {cartList}
           <p>Valor total: R${this.totalValueCart()},00</p>
         </div>
 
-=======
         <CartDiv>carrinho</CartDiv>
-
       </Body>
     );
   }
