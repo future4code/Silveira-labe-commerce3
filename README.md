@@ -1,37 +1,24 @@
-# Labe-commerce - Galaxy Quest
-
-## 🚀 Acesse o nosso projeto em
-https://galaxy-quest.surge.sh/
+# Labe-commerce - Space Shirts
 
 ## 🤝 Desenvolvedores
 
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/matheusmantini">
         <sub>
-          <b>Matheus Mantini</b>
+          <b>Arthur Prado</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Jmaraguiar">
         <sub>
-          <b>João Marcos</b>
+          <b>Andresa Alves</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/EduardoOsiro">
         <sub>
-          <b>Eduardo Osiro</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/luiangcosta">
-        <sub>
-          <b>Luian Costa</b>
+          <b>Guilherme Lira</b>
         </sub>
       </a>
     </td>
