@@ -1,10 +1,13 @@
 # Labe Ecommerce - Space Shirts
 
-### O que funciona
-- TUDO FUNCIONANDO
+Projeto usando React, caracterizando uma lojinha de compras com a temática espacial. Nossa store Space Odyssey contém itens de vestuários infantis e adulto, todos com referência espacial, desde a concepção do site, até os itens de compras para o usuário. Foram desenvolvidos elementos para construção do site usando html, CSS e JavaScript, aplicando as funções descritas abaixo:
 
-### O que não funciona
-- XXXXX
+Filtro de compras (máximo e mínimo valor)
+Filtro de busca (por nome de produto)
+Ordenação (crescente e decrescente por preço)
+Lista de produtos (adicionar produtos para compra)
+Carrinho de produtos do cliente (Quantidade e nome de produto, e botão remover)
+Valor total da compra
 
 ### Confira nosso site:
 https://utter-map.surge.sh/
