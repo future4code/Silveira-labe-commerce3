@@ -9,6 +9,11 @@ Lista de produtos (adicionar produtos para compra)
 Carrinho de produtos do cliente (Quantidade e nome de produto, e botão remover)
 Valor total da compra
 
+### Tecnologias Utilizadas:
+1. JavaScrypt / React
+2. HTML 
+3. CSS / Styled-Components
+
 ### Confira nosso site:
 https://utter-map.surge.sh/
 
